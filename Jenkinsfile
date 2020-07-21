@@ -15,7 +15,7 @@ pipeline{
             steps {
                 deploy adapters: [tomcat8(credentialsId: 'tomcatLogin', path: '', url: 'http://localhost:8001/')], contextPath: 'tasks-backend', war: 'target/tasks-backend.war'            }
         }
-         stage ('Api Tests'){
+        stage ('Api Tests'){
             steps {
               git credentialsId: 'github_login', url: 'https://github.com/cleano01/tasks-api-test'
               sh 'mvn test'
