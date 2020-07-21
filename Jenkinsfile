@@ -17,8 +17,8 @@ pipeline{
         }
         stage ('Api Tests'){
             steps {
-              git credentialsId: 'github_login', url: 'https://github.com/cleano01/tasks-api-test'
-              sh 'mvn test'
+                git credentialsId: 'github_login', url: 'https://github.com/cleano01/tasks-api-test'
+                sh 'mvn test'
             }
         }
     }
